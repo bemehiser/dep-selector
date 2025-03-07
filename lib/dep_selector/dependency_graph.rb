@@ -61,7 +61,7 @@ module DepSelector
           end
 
         logId = SecureRandom.uuid
-        debugFlag = DebugOptionFile && File::exists?(DebugOptionFile)
+        debugFlag = DebugOptionFile && File::exist?(DebugOptionFile)
         Debug.log.level = Logger::INFO unless debugFlag
         Debug.log.formatter = proc do |severity, datetime, progname, msg|
           "#{logId}: #{msg}\n"
